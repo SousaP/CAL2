@@ -4,7 +4,7 @@
 
 
 int main(){
-	bool good = true;
+	bool good;
 	string f1, f2;
 	Files File1, File2;
 

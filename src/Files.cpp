@@ -20,6 +20,7 @@ Files::Files(string n, bool &good) :
 			newLine = "";
 		}
 		myfile.close();
+		good = true;
 	}
 	else
 		good = false;
