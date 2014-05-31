@@ -1,7 +1,7 @@
 #include "Files.h"
 
-Files :: Files(){}
-
+Files::Files() {
+}
 
 Files::Files(string n, bool &good) :
 		name(n) {
@@ -9,7 +9,7 @@ Files::Files(string n, bool &good) :
 
 	ifstream myfile(n.c_str());
 
-	if (myfile.good()){
+	if (myfile.good()) {
 		while (!myfile.eof()) {
 
 			getline(myfile, newLine);
@@ -21,8 +21,7 @@ Files::Files(string n, bool &good) :
 		}
 		myfile.close();
 		good = true;
-	}
-	else
+	} else
 		good = false;
 }
 Files::Files(string n, vector<string> l) :
@@ -35,4 +34,15 @@ string Files::getName() {
 
 vector<string> Files::getLines() {
 	return lines;
+}
+
+string Files::GetText() {
+	string retorno = "";
+	for (int i = 0; i < lines.size(); i++) {
+		retorno += lines[i];
+		if(i != lines.size()-1)
+		retorno += "\n";
+	}
+
+	return retorno;
 }

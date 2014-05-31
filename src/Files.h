@@ -18,6 +18,7 @@ public:
 	Files(string n, vector<string> l);
 	string getName();
 	vector<string> getLines();
+	string GetText();
 };
 
 #endif

@@ -19,6 +19,7 @@ public:
 	Files getFile1();
 	Files getFile2();
 	vector <Changes> getDiff();
+	void addDifferences(Changes c);
 };
 
 

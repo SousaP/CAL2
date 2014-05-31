@@ -19,3 +19,7 @@ Files FileRevision :: getFile2(){
 vector <Changes> FileRevision ::getDiff(){
 	return Differences;
 }
+
+void FileRevision ::addDifferences(Changes c){
+	Differences.push_back(c);
+}
