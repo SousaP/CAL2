@@ -1,15 +1,15 @@
 #include "Changes.h"
 
 Changes :: Changes(string c, char s)
-: change(c), symbol(s){}
+: change(c), symbol(s), line(""){}
 
 Changes :: Changes(string c, char s, string t)
-: change(c), symbol(s), teste(t){}
+: change(c), symbol(s), line(t){}
 
 
 string Changes :: getChange(){
 	string temp;
-	temp += teste;
+	temp += line;
 	temp += " ";
 	temp += symbol;
 	temp += " ";

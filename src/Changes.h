@@ -10,7 +10,7 @@ class Changes{
 private:
 	string change;
 	char symbol;
-	string teste = "";
+	string line;
 public:
 	Changes(string c, char s);
 	Changes(string c, char s, string t);
