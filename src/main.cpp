@@ -73,13 +73,13 @@ void MenuFiles() {
 	cout << "||Comparacao de ficheiros||\n";
 
 	do {
-		cout << "\nFile 1:  ";
+		cout << "\nFicheiro antigo:  ";
 		cin >> f1;
 		File1 = Files(f1, good);
 	} while (!good);
 
 	do {
-		cout << "\nFile 2:  ";
+		cout << "\nFicheiro novo:  ";
 		cin >> f2;
 		File2 = Files(f2, good);
 	} while (!good);
