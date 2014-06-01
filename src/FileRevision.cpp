@@ -81,7 +81,7 @@ unsigned int levenshtein_distance(string &s1, string & s2) {
 }
 
 bool compareString(string s, string t){
-	int comp = levenshtein_distance(s,t);
+	unsigned int comp = levenshtein_distance(s,t);
 	if(comp <= s.size()/3 || comp <= t.size()/3)
 		return true;
 
@@ -98,6 +98,7 @@ void FileRevision::CreatCompareFile() {
 
 	bool encontrou = false;
 	int cont = 0;
+	int cont2 = 0;
 	for (unsigned int i = 0; i < L2.size(); i++) {
 		for (unsigned int d = cont; d < L1.size(); d++) {
 			if (L2[i] == L1[d]) {
@@ -114,7 +115,8 @@ void FileRevision::CreatCompareFile() {
 			}
 		}
 		if(!encontrou)
-			Differences.push_back(Changes(L2[i], '+'));
+			{Differences.push_back(Changes(L2[i], '+'));
+			cont2++;}
 
 		encontrou = false;
 	}
@@ -122,7 +124,7 @@ void FileRevision::CreatCompareFile() {
 	int pos = 0;
 
 	for (unsigned int d = 0; d < L1.size(); d++) {
-		for (unsigned int i = 0; i < L2.size(); i++) {
+		for (unsigned int i = 0; i < d+cont2; i++) {
 			if (L2[i] == L1[d]) {
 				encontrou = true;
 				break;
