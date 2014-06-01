@@ -1,35 +1,35 @@
-+ This is an important
-+ notice! It should
-+ therefore be located at
-+ the beginning of this
-+ document!
->  
-+ This part of the
-- compress the size of the
-- changes.
-> document has stayed the
-- This paragraph contains
-- text that is outdated.
-- It will be deleted in the
-- near future.
-> same from version to
-> version.  It shouldn't
-> be shown if it doesn't
-> change.  Otherwise, that
-> would not be helping to
-+ compress anything.
->  
-> It is important to spell
-~ check this dokument. On
-~ check this document. On
-> the other hand, a
-> misspelled word isn't
-> the end of the world.
-> Nothing in the rest of
-> this paragraph needs to
-> be changed. Things can
-> be added after it.
-+  
-+ This paragraph contains
-+ important new additions
-+ to this document.
+FN1 + This is an important
+FN2 + notice! It should
+FN3 + therefore be located at
+FN4 + the beginning of this
+FN5 + document!
+ >  
+FN7 + This part of the
+FA8 - compress the size of the
+FA9 - changes.
+ > document has stayed the
+FA11 - This paragraph contains
+FA12 - text that is outdated.
+FA13 - It will be deleted in the
+FA14 - near future.
+ > same from version to
+ > version.  It shouldn't
+ > be shown if it doesn't
+ > change.  Otherwise, that
+ > would not be helping to
+FN14 + compress anything.
+ >  
+ > It is important to spell
+FA17 ~ check this dokument. On
+FN17 ~ check this document. On
+ > the other hand, a
+ > misspelled word isn't
+ > the end of the world.
+ > Nothing in the rest of
+ > this paragraph needs to
+ > be changed. Things can
+ > be added after it.
+FN25 +  
+FN26 + This paragraph contains
+FN27 + important new additions
+FN28 + to this document.
