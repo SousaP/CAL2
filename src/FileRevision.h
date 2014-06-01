@@ -22,6 +22,7 @@ public:
 	void addDifferences(Changes c);
 	void CreatCompareFile();
 	void SaveDiff();
+	void showDiff();
 };
 
 string LCS(string s, string t);

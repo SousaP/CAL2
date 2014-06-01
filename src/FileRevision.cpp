@@ -176,3 +176,9 @@ void FileRevision::SaveDiff() {
 
 	myfile.close();
 }
+
+void FileRevision:: showDiff(){
+	for(unsigned int i = 0; i < Differences.size(); i++)
+			cout << Differences[i].getChange() << endl;
+}
+
