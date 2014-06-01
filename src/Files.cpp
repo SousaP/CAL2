@@ -13,11 +13,7 @@ Files::Files(string n, bool &good) :
 		while (!myfile.eof()) {
 
 			getline(myfile, newLine);
-			if (newLine != "") {
 				lines.push_back(newLine);
-			}
-
-			newLine = "";
 		}
 		myfile.close();
 		good = true;

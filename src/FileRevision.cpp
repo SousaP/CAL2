@@ -81,7 +81,8 @@ unsigned int levenshtein_distance(string &s1, string & s2) {
 }
 
 bool compareString(string s, string t){
-	if(levenshtein_distance(s,t) < s.size()/3)
+	int comp = levenshtein_distance(s,t);
+	if(comp <= s.size()/3 || comp <= t.size()/3)
 		return true;
 
 	return false;
@@ -96,16 +97,19 @@ void FileRevision::CreatCompareFile() {
 	L2 = File2.getLines();
 
 	bool encontrou = false;
+	int cont = 0;
 	for (unsigned int i = 0; i < L2.size(); i++) {
-		for (unsigned int d = 0; d < L1.size(); d++) {
+		for (unsigned int d = cont; d < L1.size(); d++) {
 			if (L2[i] == L1[d]) {
 				Differences.push_back(Changes(L2[i], '>'));
 				encontrou = true;
+				cont++;
 				break;
 			} else if (compareString(L2[i], L1[d])) {
 				Differences.push_back(Changes(L1[d], '~'));
 				Differences.push_back(Changes(L2[i], '~'));
 				encontrou = true;
+				cont++;
 				break;
 			}
 		}
@@ -129,7 +133,7 @@ void FileRevision::CreatCompareFile() {
 			}
 		}
 		if(!encontrou)
-			Differences.insert(Differences.begin()+ d+pos +1, Changes(L1[d], '-'));
+			Differences.insert(Differences.begin()+ d+pos, Changes(L1[d], '-'));
 
 		encontrou = false;
 	}
