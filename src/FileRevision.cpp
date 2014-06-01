@@ -24,7 +24,7 @@ void FileRevision::addDifferences(Changes c) {
 	Differences.push_back(c);
 }
 
-string computeLCS(string s, string t) {
+string LCS(string s, string t) {
 
 	if (s.size() > t.size())
 		swap(s, t);
@@ -91,7 +91,6 @@ bool compareString(string s, string t){
 
 void FileRevision::CreatCompareFile() {
 
-	//vector <Changes> Differences;
 	vector<string> L1, L2;
 	L1 = File1.getLines();
 	L2 = File2.getLines();

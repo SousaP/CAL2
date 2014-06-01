@@ -24,9 +24,9 @@ public:
 	void SaveDiff();
 };
 
-string computeLCS(string s, string t);
-
+string LCS(string s, string t);
 bool compareString(string s, string t);
+unsigned int levenshtein_distance(string &s1, string & s2);
 
 
 #endif

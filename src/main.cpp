@@ -4,49 +4,49 @@
 void searchString(string s1, string s2) {
 
 	string temp1, temp2;
-	string LCS = computeLCS(s1, s2);
+	string strLCS = LCS(s1, s2);
 	unsigned int pos1, pos2;
-	if (LCS.size() == 0) {
+	if (strLCS.size() == 0) {
 		if (s1.size() != 0)
 			cout << "-" << s1 << "-";
 		if (s2.size() != 0)
 			cout << "+" << s2 << "+";
 		return;
-	} else if (LCS.size() == s1.size()) {
+	} else if (strLCS.size() == s1.size()) {
 		if (s1.size() == s2.size()) {
-			cout << ">" << LCS << "<";
+			cout << ">" << strLCS << "<";
 			return;
 		}
-		pos2 = s2.find(LCS);
+		pos2 = s2.find(strLCS);
 		if (pos2 == 0) {
 			temp2 = s2;
-			cout << ">" << LCS << "<";
-			temp2.erase(0, LCS.size());
+			cout << ">" << strLCS << "<";
+			temp2.erase(0, strLCS.size());
 			if (temp2.size() != 0)
 				cout << "+" << temp2 << "+";
 		} else {
 			temp1.assign(s2, 0, pos2);
-			temp2.assign(s2, pos2 + LCS.size(), s2.size() - LCS.size());
+			temp2.assign(s2, pos2 + strLCS.size(), s2.size() - strLCS.size());
 			if (temp1.size() != 0)
 				cout << "+" << temp1 << "+";
-			cout << ">" << LCS << "<";
+			cout << ">" << strLCS << "<";
 			if (temp2.size() != 0)
 				cout << "+" << temp2 << "+";
 		}
 		return;
 	}
 
-	pos1 = s1.find(LCS);
-	pos2 = s2.find(LCS);
+	pos1 = s1.find(strLCS);
+	pos2 = s2.find(strLCS);
 
 	temp1.assign(s1, 0, pos1);
 	temp2.assign(s2, 0, pos2);
 	searchString(temp1, temp2);
 
-	cout << ">" << LCS << "<";
+	cout << ">" << strLCS << "<";
 
-	temp1.assign(s1, pos1 + LCS.size(), s1.size() - LCS.size());
-	temp2.assign(s2, pos2 + LCS.size(), s2.size() - LCS.size());
+	temp1.assign(s1, pos1 + strLCS.size(), s1.size() - strLCS.size());
+	temp2.assign(s2, pos2 + strLCS.size(), s2.size() - strLCS.size());
 
 	searchString(temp1, temp2);
 
@@ -58,16 +58,9 @@ void CompareFiles(Files F1, Files F2) {
 
 	string File1 = F1.GetText();
 	string File2 = F2.GetText();
-	/*string LCS = computeLCS(File1, File2);
 
-	if (LCS.size() == 0) {
-		cout << "Ficheiros completamente diferentes";
-		return;
-	} */
 	FileRevision F(F1,F2);
 	F.CreatCompareFile();
-
-	//searchString(File1, File2);
 }
 
 void MenuFiles() {
@@ -88,7 +81,6 @@ void MenuFiles() {
 		cin >> f2;
 		File2 = Files(f2, good);
 	} while (!good);
-	cout << "\n AQUI \n";
 	CompareFiles(File1, File2);
 }
 
@@ -104,7 +96,7 @@ void MenuStrings() {
 	cout << "String2: ";
 	getline(cin, s2);
 
-	//cout << "LCS: " << computeLCS(s1, s2) << endl;
+	cout << "LCS: " << LCS(s1, s2) << endl;
 
 }
 
