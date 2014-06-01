@@ -1,44 +1,5 @@
 #include "FileRevision.h"
 #include <iostream>
-string computeLCS(string s, string t) {
-
-	if (s.size() > t.size())
-		swap(s, t);
-
-	unsigned int n = s.size();
-	unsigned int m = t.size();
-
-	vector<vector<unsigned int> > L(n + 1, vector<unsigned int>(m + 1));
-
-	for (unsigned long int i = 0; i < s.size(); i++)
-		for (unsigned long int j = 0; j < t.size(); j++)
-			L[i][j] = 0;
-	unsigned long int z = 0;
-
-	string ret;
-
-	for (unsigned long int i = 0; i < s.size(); i++) {
-		for (unsigned long int j = 0; j < t.size(); j++) {
-			if (s[i] == t[j]) {
-				if (i == 0 || j == 0) {
-					L[i][j] = 1;
-				} else {
-					L[i][j] = L[i - 1][j - 1] + 1;
-				}
-
-				if (L[i][j] > z) {
-					z = L[i][j];
-					ret = s.substr(i - z + 1, z);
-				} else if (L[i][j] == z) {
-					ret += s.substr(i - z + 1, z);
-				} else {
-					L[i][j] = 0;
-				}
-			}
-		}
-	}
-	return ret;
-}
 
 void searchString(string s1, string s2) {
 
@@ -92,17 +53,21 @@ void searchString(string s1, string s2) {
 }
 
 void CompareFiles(Files F1, Files F2) {
+
 	vector<Changes> changes;
 
 	string File1 = F1.GetText();
 	string File2 = F2.GetText();
-	string LCS = computeLCS(File1, File2);
+	/*string LCS = computeLCS(File1, File2);
+
 	if (LCS.size() == 0) {
 		cout << "Ficheiros completamente diferentes";
 		return;
-	}
+	} */
+	FileRevision F(F1,F2);
+	F.CreatCompareFile();
 
-	searchString(File1, File2);
+	//searchString(File1, File2);
 }
 
 void MenuFiles() {
@@ -123,7 +88,7 @@ void MenuFiles() {
 		cin >> f2;
 		File2 = Files(f2, good);
 	} while (!good);
-
+	cout << "\n AQUI \n";
 	CompareFiles(File1, File2);
 }
 
@@ -139,15 +104,15 @@ void MenuStrings() {
 	cout << "String2: ";
 	getline(cin, s2);
 
-	cout << "LCS: " << computeLCS(s1, s2) << endl;
+	//cout << "LCS: " << computeLCS(s1, s2) << endl;
 
 }
 
 int main() {
 	string escolha = "";
 
-	while (escolha != "sair" && escolha != "Sair") {
-		cout << "\n1. Strings\n2. Files\n";
+	while (escolha != "sair" && escolha != "Sair" && escolha != "3") {
+		cout << "\n1. Strings\n2. Files\n3. Sair\n";
 		cin >> escolha;
 
 		if (escolha == "1" || escolha == "Srings" || escolha == "srings")

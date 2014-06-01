@@ -1,1 +1,7 @@
-ele foi a casa e nao voltou
+This is an important
+notice! It should
+therefore be located at
+the beginning of this
+document!
+
+Simples as that.

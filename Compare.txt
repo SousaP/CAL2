@@ -1,0 +1,8 @@
+~ This is not an important
+~ This is an important
+> notice! It should
+> therefore be located at
+> the beginning of this
+> document!
++ Simples as that.
+- Xau documento

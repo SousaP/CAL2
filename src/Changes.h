@@ -16,8 +16,4 @@ public:
 	string Change();
 	char getSymbol();
 };
-
-
-
-
 #endif

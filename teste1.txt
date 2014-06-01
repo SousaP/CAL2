@@ -1,1 +1,7 @@
-ele foi a sala e voltou
+This is not an important
+notice! It should
+therefore be located at
+the beginning of this
+document!
+
+Xau documento

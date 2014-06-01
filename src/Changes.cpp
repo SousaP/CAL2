@@ -8,8 +8,6 @@ string Changes :: getChange(){
 	temp += symbol;
 	temp += " ";
 	temp += change;
-	temp += " ";
-	temp += symbol;
 	return temp;
 }
 
