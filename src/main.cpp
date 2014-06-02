@@ -63,6 +63,7 @@ void CompareFiles(Files F1, Files F2) {
 	F.CreatCompareFile();
 	F.showDiff();
 	cout << "\n\nFA -> Ficheiro antigo\nFN -> Ficheiro novo\nGuardado no ficheiro Compare.txt\n";
+
 }
 
 void MenuFiles() {
