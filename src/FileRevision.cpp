@@ -106,7 +106,6 @@ void FileRevision::CreatCompareFile() {
 			if (L2[i] == L1[d]) {
 				Differences.push_back(Changes(L2[i], '>'));
 				encontrou = true;
-				cont++;
 				break;
 			} else if (compareString(L2[i], L1[d])) {
 				line = "FA";
@@ -122,7 +121,6 @@ void FileRevision::CreatCompareFile() {
 				nrline.clear();
 				Differences.push_back(Changes(L2[i], '~', line));
 				encontrou = true;
-				cont++;
 				break;
 			}
 		}

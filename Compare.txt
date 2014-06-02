@@ -4,7 +4,7 @@ FN3 + therefore be located at
 FN4 + the beginning of this
 FN5 + document!
  >  
-FN7 + This part of the
+ > This part of the
 FA8 - compress the size of the
 FA9 - changes.
  > document has stayed the
@@ -29,7 +29,7 @@ FN17 ~ check this document. On
  > this paragraph needs to
  > be changed. Things can
  > be added after it.
-FN25 +  
-FN26 + This paragraph contains
+ >  
+ > This paragraph contains
 FN27 + important new additions
 FN28 + to this document.

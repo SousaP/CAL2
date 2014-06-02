@@ -107,7 +107,7 @@ int main() {
 	string escolha = "";
 
 	while (escolha != "sair" && escolha != "Sair" && escolha != "3") {
-		cout << "\n1. Strings\n2. Files\n3. Sair\n";
+		cout << "\n1. LCS de uma String\n2. Files\n3. Sair\n";
 		cin >> escolha;
 
 		if (escolha == "1" || escolha == "Srings" || escolha == "srings")
